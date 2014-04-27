@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<!-- A layout is the equivalent of the ASPX master page -->
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Content/jquery-v2.0.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/Site.css")" type="text/css" rel="Stylesheet" />
+</head>
+    
+<body>
+    <div id="header">   
+        @{Html.RenderAction("Summary", "Cart");} 
+        <div class="title">SPORTS STORE</div>      
+    </div>
+    <div id="categories">
+        @{ Html.RenderAction("Menu","Nav"); }
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+</body>
+</html>
